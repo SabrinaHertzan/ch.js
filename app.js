@@ -1,82 +1,104 @@
- // Vendedor
-  let  quienSoy = prompt ("¿Eres empleado?");
- 
- if(quienSoy == "si")
- {
- const empleadaA = "Camila"
- const empleadoB = "Julián"
- 
- let producto1 = 12000
- let producto2 = 11500
- let producto3 = 26700
-
- let totalCamila = producto1 + producto2
- let totalJulian = producto3
-
-  if (totalCamila >= 25000) {
-    let ganancia = totalCamila * 0.15;
-    alert(empleadaA + ", tenes un 15% extra en tu salario. Total de ganancia: $" + (ganancia));
-} else {
-    alert(empleadaA + ", tus ventas no superaron el objetivo. Total de ventas: $" + totalCamila);
+function Joya(material, precio) {
+    this.material = material;
+    this.precio = precio;
 }
 
-if (totalJulian >= 25000) {
-    let ganancia = totalJulian * 0.15;
-    alert(empleadoB + ", tenes un 15% extra en tu salario. Total de ganancia: $" + (ganancia));
-} else {
-    alert(empleadoB + ", tus ventas no superaron el objetivo. Total de ventas: $" + totalJulian);
+function validarCorreoYNombre(correoIngresado, nombreIngresado) {
+    if (isNaN(correoIngresado) && correoIngresado.trim() !== "" && isNaN(nombreIngresado) && nombreIngresado.trim() !== "") {
+        return true;  
+    } else {
+        alert("Error: Los datos ingresados son incorrectos. Por favor, ingrese un correo y un nombre válidos.");
+        return false;  
+    }
 }
+
+
+function obtenerProductos(categoria) {
+    const productos = {
+        aros: [
+            { nombre: "Aro1", precio: 15000 },
+            { nombre: "Aro2", precio: 16000 },
+            { nombre: "Aro3", precio: 17000 }
+        ],
+        collares: [
+            { nombre: "Collar1", precio: 20000 },
+            { nombre: "Collar2", precio: 22000 },
+            { nombre: "Collar3", precio: 24000 }
+        ],
+        pulseras: [
+            { nombre: "Pulsera1", precio: 18000 },
+            { nombre: "Pulsera2", precio: 19000 },
+            { nombre: "Pulsera3", precio: 20000 }
+        ]
+    };
+
+    return productos[categoria] || [];
 }
 
-else{
+function obtenerRespuestaSiNo(pregunta) {
+    let respuesta;
+    do {
+        respuesta = prompt(pregunta).toUpperCase();
+    } while (respuesta !== "SI" && respuesta !== "NO");
 
-    //Cliente
+    return respuesta;
+}
 
-    let continuar = true;
+function mostrarProductosYCalcularDescuento() {
+    const Descuento = 0.85;
 
-    while(continuar){ 
-        let correoIngresado = prompt ("Ingrese su correo electrónico para recibir nuestras ofertas");
-        console.log(correoIngresado);
+    let estaRegistrado;
 
-        let nombreIngresado = prompt ("Ingrese su nombre");
-        console.log(nombreIngresado);
-        
-        if (!isNaN(correoIngresado) || correoIngresado === "" || !isNaN(nombreIngresado) || nombreIngresado === "") {
-            alert("Error: ingresar correo y nombre");
+    do {
+        estaRegistrado = obtenerRespuestaSiNo("¿Estás registrado en la página? (SI/NO)");
+
+        if (estaRegistrado === "NO") {
+            let correoIngresado = prompt("Ingrese su correo electrónico para registrarse");
+            let nombreIngresado = prompt("Ingrese su nombre");
+
+            if (validarCorreoYNombre(correoIngresado, nombreIngresado)) {
+                alert("¡Gracias por registrarte!\nCorreo: " + correoIngresado + "\nNombre: " + nombreIngresado);
+            }
+        } else if (estaRegistrado !== "SI") {
+            alert("Respuesta no válida. Por favor, responda con 'SI' o 'NO'.");
+        }
+
+    } while (estaRegistrado !== "SI");
+
+    do {
+        let categoriaElegida = prompt("¿Qué productos deseas ver?\nOpciones: Aros, Collares, Pulseras");
+        let productos = obtenerProductos(categoriaElegida.toLowerCase());
+
+        if (productos.length === 0) {
+            alert("Categoría no válida o sin productos disponibles.");
+            return;
+        }
+
+        alert("Productos disponibles en la categoría " + categoriaElegida + ":");
+
+        for (let i = 0; i < productos.length; i++) {
+            alert("Nombre: " + productos[i].nombre + "\nPrecio: $" + productos[i].precio);
+        }
+
+        let productoElegido = prompt("¿Qué producto deseas comprar?");
+        let productoSeleccionado = productos.find(producto => producto.nombre.toLowerCase() === productoElegido.toLowerCase());
+
+        if (productoSeleccionado) {
+            let precioConDescuento = productoSeleccionado.precio * Descuento;
+            alert("Usted ha elegido " + productoSeleccionado.nombre + ". El precio con descuento es: $" + precioConDescuento);
         } else {
-            continuar = false;
-            alert("correo: " + correoIngresado + " nombre: " + nombreIngresado);
-        }    
-    }
+            alert("Producto no válido. La compra no se completó.");
+        }
+
+        estaRegistrado = obtenerRespuestaSiNo("¿Quieres seguir comprando? (SI/NO)");
+
+    } while (estaRegistrado === "SI");
+
+    alert("Muchas gracias por su compra, lo esperamos pronto!!");
 }
- 
 
- let consulta = confirm("¿Te puedo ayudar en tu búsqueda?");
- if(consulta === true){
-    let joyas = prompt("¿Qué joya estás buscando?")
-    let articulos = prompt ("Elegí tús " +joyas)
+function iniciarProceso() {
+    mostrarProductosYCalcularDescuento();
+}
 
-    switch(articulos){
-        case "aros":
-            alert("Tenemos varios " +articulos)
-            break;
-        case "cadenas":
-            alert("Tenemos varios " +articulos)
-            break;
-        case "anillos":
-            alert("Tenemos varios " +articulos)
-            break;
-        
-        default:
-            alert("No tenemos " +articulos)
-    }
- }
-
- const Descuento = 0.85
-
- function calcularDescuento(importe){
-    let resultado = importe * Descuento
-    alert("el importe con el descuento es: " +resultado)
- }
-
- calcularDescuento(12000)
+iniciarProceso();
