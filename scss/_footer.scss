@@ -1,0 +1,10 @@
+#footer {
+  background-color: $bg-color;
+  color: black;
+  display: flex;
+  justify-content: space-around;
+  align-items: top;
+  padding-top: 13px;
+  width: $width-100;
+  background: linear-gradient(to bottom left, rgb(93, 93, 97), rgb(216, 213, 213))
+}

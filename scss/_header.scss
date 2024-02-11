@@ -1,0 +1,61 @@
+.header {
+  background-color: $bg-color;
+  color: rgb(39, 37, 37);
+  padding: 15px;
+  width: $width-100;
+  border-bottom: 1px solid #cec7c7;
+  box-shadow: 0 2px 5px rgba(1, 1, 1, 0.5);
+  background: linear-gradient(to bottom left, rgb(97, 97, 93), rgb(216, 213, 213))
+}
+
+.logo {
+  margin-left: -30px;
+  margin-right: 30px;
+  width: map-get($map: $estilos, $key: width);
+  justify-content: map-get($map: $estilos, $key: j-content);
+  margin-left: map-get($map: $estilos, $key: margin-l);
+  opacity: 0;
+  animation: aparecerLogo 2s ease-in-out forwards;
+}
+
+@keyframes aparecerLogo {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 2;
+  }
+}
+
+.nav-item button {
+  text-decoration: none;
+  border: 2px solid rgb(141, 138, 138);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-left: 10px;
+
+  &:hover {
+    border: 2px solid rgb(141, 138, 138);
+    background-color: rgb(216, 213, 213);
+    color: black;
+  }
+}
+
+.form-control {
+  border-radius: 10px;
+  border: 2px solid rgb(141, 138, 138);
+}
+
+.nav-item a {
+  text-decoration: none;
+  border: 2px solid rgb(141, 138, 138);
+  padding: 5px 10px;
+  border-radius: 10px;
+  margin-right: 10px;
+
+  &:hover{
+    border: 2px solid rgb(141, 138, 138);
+    background-color: rgb(216, 213, 213);
+  }
+}

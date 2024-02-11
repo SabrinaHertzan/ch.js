@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Explora nuestra exclusiva colección de joyas que destacan por su calidad y estilo. Desde anillos y pulseras hasta collares y pendientes, descubre la elegancia atemporal en cada detalle. Encuentra la joya perfecta para expresar tu estilo único.">
+        <meta name="keywords" content="colección, joyas, calidad, estilo, elegancia, anillos, pulseras, collares, conjuntos, pendientes, detalles, unicos ">
+        <title>Productos</title>
+        <link rel="shortcut icon" href="../favicom.ico" type="image/x-icon"> 
+        <link rel="stylesheet" href="../css/bootstrap.min.css">
+        <link rel="stylesheet" href="../css/estilos.css">
+        <style>
+            /* Agrega tu estilo personalizado para el carrito aquí */
+            .carrito {
+                border: 1px solid #ccc;
+                padding: 10px;
+                margin-top: 20px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header class="header">
+            <div class="container">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="navbar-brand" href="../index.html">
+                        <img class="logo" src="../assets/img/logo1.png" alt="Logo joyería de autor">
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <div class="d-flex justify-content-center align-items-center flex-column">
+                            <form class="form-inline mb-3">
+                                <div class="input-group">
+                                    <input class="form-control" type="search" placeholder="Buscador" aria-label="Buscador">
+                                    <div class=" nav-item input-group-append">
+                                        <button class="btn btn-outline-dark" type="submit">BUSCADOR</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <ul class="navbar-nav">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="../index.html">INICIO</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./nosotros.html">NOSOTROS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./sucursales.html">SUCURSALES</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" href="./productos.html">PRODUCTOS</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./contacto.html">CONTACTO</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </header>
+                
+        <main>
+            <div class="carrito">
+                <h2>Carrito de Compras</h2>
+                <ul id="carritoLista"></ul>
+                <p>Total: $<span id="totalCarrito">0.00</span></p>
+                <button id="finalizarCompra" class="btn btn-success">Finalizar Compra</button>
+            </div>                   
+            <h1>Productos</h1>
+            <div id="productos">
+                <div class="container">
+                    <h2>Nuestros Aros</h2>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/ArosLady.png" alt="Aros Lady, perla negra">
+                                <h3>Aros Lady</h3>
+                                <p>$12.500</p>  
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Aros Lady" data-precio="12500">Seleccionar</button>
+                            </div>                  
+                        </div>
+        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/ArosPandora.png" alt="Aros Pandora rose, perla blanca">
+                                <h3>Aros Pandora</h3>
+                                <p>$12.800</p> 
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Aros Pandora" data-precio="12800">Seleccionar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/ArosGinny.png" alt="Aros Ginny flor, perla blanca">
+                                <h3>Aros Glamira</h3>
+                                <p>$14.600</p> 
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Aros Glamira" data-precio="14600">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="container">
+                    <h2>Nuestros Anillos</h2>
+                    <div class="row">
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/AnilloGwendy.png" alt="Anillo Gwendy, circón negro">
+                                <h3>Anillo Gwendy</h3>
+                                <p>$17.500</p>                     
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Anillo Gwendy" data-precio="17500">Seleccionar</button>
+                            </div>
+                        </div>
+        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/AnilloZamsaz.png" alt="Anillo Zamsaz doble con circón y micropave">
+                                <h3>Anillo AnilloZamsaz</h3>
+                                <p>$18.800</p>                     
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Anillo AnilloZamsaz" data-precio="18800">Seleccionar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4"> 
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/AnilloZovanka.png" alt="Anillo Zovanka simple con circón">
+                                <h3>Anillo Zovanka</h3>
+                                <p>$14.900</p>                     
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Anillo Zovanka" data-precio="14900">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <h2>Nuestros Collares</h2>
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/CollarTrecia.png" alt="Collar Trecia dorado con perla blanca">
+                                <h3>Collar Trecia</h3>
+                                <p>$20.500</p>                     
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Collar Trecia" data-precio="20500">Seleccionar</button>
+                            </div>
+                        </div>
+        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/CollarDoty.png" alt="Collar Doty rose, con perla rose y strass">
+                                <h3>Collar Doty</h3>
+                                <p>$25.000</p>                     
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Collar Doty" data-precio="25000">Seleccionar</button>
+                            </div>
+                        </div>
+                        
+                        <div class="col-12 col-sm-12 col-md-6 col-lg-4">
+                            <div class="item">
+                                <img class="style-img" src="../assets/img/CollarMaiya.png" alt="Collar Maiya con perla blanca">
+                                <h3>Collar Maiya</h3>
+                                <p>$19.900</p>                     
+                                <button class="btn btn-primary seleccionar-producto" data-nombre="Collar Maiya" data-precio="19900">Seleccionar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>                     
+        </main>
+        
+
+        <footer id="footer">
+            <div class="container row align-items-start">
+                <div class="col">
+                    <h4> Preguntas frecuentes</h4>
+                    <ul>
+                        <li class="nav-style" ><a href="https://www.google.com" target="_blank">¿Cómo comprar?</a></li>
+                        <li class="nav-style"><a  href="https://www.google.com" target="_blank">Envíos.</a></li>
+                        <li class="nav-style"><a href="https://www.google.com" target="_blank">Guía de talles.</a></li>
+                        <li class="nav-style"><a  href="https://www.google.com" target="_blank">Cuidado/limpieza de joyas.</a></li>
+                        <li class="nav-style"><a  href="https://www.google.com" target="_blank">Cambios y devoluciones.</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col">
+                    <h4> Métodos de pago</h4>
+                    <ul>
+                        <li class="nav-style"><a>Efectivo/transferencia: 15% de descuento.</a></li>
+                        <li class="nav-style"><a >Tarjeta de débito.</a> </li>
+                        <li class="nav-style"><a >Tarjeta de crédito: 3 cuotas s/interés.</a></li>  
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4> Contacto</h4>
+                    <ul>
+                        <li class="nav-style"><a  href="https://www.gmail.com" target="_blank">Mail: Joyeriadeautor@gmail.com</a></li>
+                        <li class="nav-style"><a  href="https://web.whatsapp.com/" target="_blank">Wsp: 3516243872 </a></li>
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>Redes sociales</h4>
+                    <ul>
+                        <li class="nav-style"><a href="https://www.instagram.com" target="_blank">Visitanos en @joyeriadeautor</a></li>                   
+                                        
+                    </ul>
+                </div>
+
+                <div class="col">
+                    <h4>Ubicación</h4>
+                    <ul>
+                        <li class="nav-style"><a>Dinosaurio Mall, Rodriguez del Busto.</a></li>
+                        <li class="nav-style"><a>Dinosaurio Mall, Ruta 20.</a></li>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13626.530936205929!2d-64.23064675311676!3d-31.36911252706767!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x943299180096466b%3A0x3df59ed0ca6a8c1b!2sDinosaurio%20Mall%20%5BAlto%20Verde%5D!5e0!3m2!1ses-419!2sar!4v1696552495548!5m2!1ses-419!2sar" width="100" height="100" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                        </iframe> 
+                    </ul>
+                </div>
+            </div>   
+        </footer>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../app.js"></script>
+    </body>
+</html>
