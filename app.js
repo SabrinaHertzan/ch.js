@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const totalCarrito = document.getElementById("totalCarrito");
     const productos = document.querySelectorAll(".seleccionar-producto");
     const finalizarCompraBtn = document.getElementById("finalizarCompra");
+    const enviarFormularioBtn = document.getElementById("enviarFormulario");
 
     let carrito = [];
     let total = 0;
@@ -25,12 +26,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const precio = parseFloat(producto.getAttribute("data-precio"));
             carrito.push({ nombre: nombre, precio: precio });
             actualizarCarrito();
-            alert(`Producto ${nombre} agregado al carrito`);
+            Swal.fire("¡Producto Agregado!", `${nombre} ha sido agregado al carrito`, "success");
         });
     });
 
     finalizarCompraBtn.addEventListener("click", () => {
-        alert("Compra finalizada");
+        Swal.fire("¡Gracias por su compra!", "Compra finalizada", "success");
         carrito = []; 
         actualizarCarrito();
     });
@@ -63,7 +64,7 @@ document.getElementById('miFormulario').addEventListener('submit', function(even
 
     localStorage.setItem("formularioData", datosJSON);
 
-    alert ("El formulario fue enviado correctamente")
+    Swal.fire("El formulario fue enviado correctamente", "", "success");
 
     limpiarCampos();
 
@@ -76,18 +77,18 @@ document.getElementById('miFormulario').addEventListener('submit', function(even
 });
 
 function validarDatos(nombre, apellido) {
-    if (isNaN(nombre) && isNaN(apellido) ) {
-        return true;  
-    } else {
-        alert("Error: Los datos ingresados son incorrectos. Por favor, corrobore los campos nombre y apellido.");
-        return false;  
-    }
+if (isNaN(nombre) && isNaN(apellido) ) {
+    return true;  
+} else {
+    Swal.fire("Error", "Los datos ingresados son incorrectos. Por favor, corrobore los campos nombre y apellido.", "error");
+    return false;  
+}
 }
 
 function limpiarCampos() {
-    document.getElementById('nombre').value = "";
-    document.getElementById('apellido').value = "";
-    document.getElementById('mail').value = "";
-    document.getElementById('telefono').value = "";
-    document.getElementById('Comentario').value = "";
+document.getElementById('nombre').value = "";
+document.getElementById('apellido').value = "";
+document.getElementById('mail').value = "";
+document.getElementById('telefono').value = "";
+document.getElementById('Comentario').value = "";
 }
